@@ -47,6 +47,7 @@
     "start:ssl": "ng serve --ssl",
     "start:pwa": "cd ./dist/storefrontapp/ && http-server -p 4200",
     "test": "ng test",
+    "test:core:lib:ci": "concurrently \"ng test core -- --no-watch --no-progress --code-coverage --browsers=ChromeHeadless\" \"ng test storefrontlib  -- --no-watch --no-progress --code-coverage --browsers=ChromeHeadless\"",
     "test:core:lib": "concurrently \"ng test core --code-coverage\" \"ng test storefrontlib --code-coverage\"",
     "test:storefront:lib": "ng test storefrontlib --sourceMap --code-coverage",
     "build:ssr": "ng run storefrontapp:server && webpack --config projects/ssr/webpack.server.config.js --progress --colors",

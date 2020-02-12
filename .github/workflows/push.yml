@@ -1,12 +1,52 @@
 on: push
 name: API extractor
 jobs:
-  breakingChangeDetectionBot:
-    name: Breaking change detection bot
-    runs-on: ubuntu-latest
+  # breakingChangeDetectionBot:
+  #   name: Breaking change detection bot
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@master
+  #   - name: Breaking change detection bot
+  #     uses: ./.github/api-extractor-action
+  #     env:
+  #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # lintingAndFixingStyles:
+  #   name: Running prettier fix and than linting
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@master
+  #   - name: Prettier fix and ng lint run
+  #     run: |
+  #       yarn install
+  #       npm run prettier-fix
+  #       npm run lint
+  # testingCoreLib:
+  #   name: Testing core lib
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@master
+  #   - name: Testing core lib
+  #     run: |
+  #       yarn install
+  #       npm run test:core:lib:ci
+  testingE2e:
+    name: Testing app with e2e
+    runs-on: ubuntu-16.04
     steps:
     - uses: actions/checkout@master
-    - name: Breaking change detection bot
-      uses: ./.github/api-extractor-action
+    - name: TTTTT
+      run: |
+        yarn && cd projects/storefrontapp-e2e-cypress && npm i && npm run cy:run
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        CYPRESS_BASE_URL: http://localhost:4200
+  # buildingProjects:
+  #   name: Building core lib and app
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@master
+  #   - name: Core lib build and app build
+  #     run: |
+  #       yarn install
+  #       npm run build:core:lib
+  #       npm run build
