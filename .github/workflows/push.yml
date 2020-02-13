@@ -56,7 +56,7 @@ jobs:
     runs-on: ubuntu-16.04
     uses: actions/checkout@master
     - name: Install & run e2e tests
-      uses: cypress-io/github-action@v1
+    - uses: cypress-io/github-action@v1
       with:
         browser: chrome
         headless: true
