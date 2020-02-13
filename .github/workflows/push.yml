@@ -55,6 +55,7 @@ jobs:
     name: Testing app with e2e
     runs-on: ubuntu-16.04
     uses: actions/checkout@master
+    steps:
     - name: Install & run e2e tests
     - uses: cypress-io/github-action@v1
       with:
