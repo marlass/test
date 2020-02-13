@@ -37,7 +37,9 @@ jobs:
     - uses: actions/checkout@master
     - name: TTTTT
       run: |
-        concurrently "yarn" "yarn install" "yarn start" "cd projects/storefrontapp-e2e-cypress && npm i && npm run cy:run"
+        yarn
+        yarn install
+        concurrently "yarn start" "cd projects/storefrontapp-e2e-cypress && npm i && npm run cy:run"
   #     env:
   #       CYPRESS_BASE_URL: http://localhost:4200
   # buildingProjects:
