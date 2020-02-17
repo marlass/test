@@ -1,6 +1,6 @@
 {
   "defaultCommandTimeout": 10000,
-  "baseUrl": "http://localhost:4200",
+  "baseUrl": "http://localhost:2000",
   "projectId": "k3nmep",
   "requestTimeout": 15000,
   "env": {

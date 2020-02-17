@@ -46,7 +46,7 @@
     "start:prod": "ng serve --prod",
     "start:ssl": "ng serve --ssl",
     "start:pwa": "cd ./dist/storefrontapp/ && http-server -p 4200",
-    "start:app": "serve dist/storefrontapp --port 4200",
+    "start:app": "serve dist/storefrontapp",
     "start:pm2": "pm2 start npm -- start:app",
     "test": "ng test",
     "test:core:lib:ci": "concurrently \"ng test core -- --no-watch --no-progress --code-coverage --browsers=ChromeHeadless\" \"ng test storefrontlib  -- --no-watch --no-progress --code-coverage --browsers=ChromeHeadless\"",
@@ -115,7 +115,9 @@
     "i18next": "^15.0.6",
     "i18next-xhr-backend": "^2.0.1",
     "ngx-infinite-scroll": "^8.0.0",
+    "pm2": "^4.2.3",
     "rxjs": "^6.4.0",
+    "serve": "^11.3.0",
     "ts-loader": "^6.0.4",
     "zone.js": "^0.10.2"
   },
