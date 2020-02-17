@@ -37,9 +37,9 @@ jobs:
     - uses: actions/checkout@master
     - name: TTTTT
       run: |
-        yarn
         yarn install
-        cd projects/storefrontapp-e2e-cypress && npm i && npm run cy:run"
+        yarn start
+        yarn && cd projects/storefrontapp-e2e-cypress && npm i && npm run cy:run
   # buildingProjects:
   #   name: Building core lib and app
   #   runs-on: ubuntu-latest
