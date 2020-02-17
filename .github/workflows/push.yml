@@ -39,10 +39,7 @@ jobs:
       run: |
         yarn
         yarn install
-        yarn add concurrently
-        concurrently "yarn start" "cd projects/storefrontapp-e2e-cypress && npm i && npm run cy:run"
-  #     env:
-  #       CYPRESS_BASE_URL: http://localhost:4200
+        yarn e2e:cy:run
   # buildingProjects:
   #   name: Building core lib and app
   #   runs-on: ubuntu-latest
