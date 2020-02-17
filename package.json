@@ -46,7 +46,7 @@
     "start:prod": "ng serve --prod",
     "start:ssl": "ng serve --ssl",
     "start:pwa": "cd ./dist/storefrontapp/ && http-server -p 4200",
-    "start:app": "serve dist/storefrontapp",
+    "start:app": "serve dist/storefrontapp --port 4200",
     "start:pm2": "pm2 start npm -- start:app",
     "test": "ng test",
     "test:core:lib:ci": "concurrently \"ng test core -- --no-watch --no-progress --code-coverage --browsers=ChromeHeadless\" \"ng test storefrontlib  -- --no-watch --no-progress --code-coverage --browsers=ChromeHeadless\"",
