@@ -41,9 +41,9 @@ jobs:
           yarn build:core:lib
           yarn build
           yarn add serve --no-save
-          npm i -g concurrently
+          yarn add concurrently --no-save
           cd projects/storefrontapp-e2e-cypress && yarn && cd ../..
-          concurrently "yarn start-app" "yarn e2e:cy:run:smoke"
+          yarn test:action
   # buildingProjects:
   #   name: Building core lib and app
   #   runs-on: ubuntu-latest
