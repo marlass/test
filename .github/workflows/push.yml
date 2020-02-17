@@ -34,12 +34,17 @@ jobs:
     name: Testing app with e2e
     runs-on: ubuntu-16.04
     steps:
-    - uses: actions/checkout@master
-    - name: TTTTT
-      run: |
-        yarn install
-        yarn start
-        yarn && cd projects/storefrontapp-e2e-cypress && npm i && npm run cy:run
+      - uses: actions/checkout@master
+      - name: TTTTT
+        run: |
+          yarn install
+          yarn build:core:lib
+          yarn build
+          yarn add serve --no-save
+          yarn add pm2 --no-save
+          pm2 start npm -- start:app
+          cd projects/storefrontapp-e2e-cypress && yarn && cd ../..
+          yarn e2e:cy:run:smoke
   # buildingProjects:
   #   name: Building core lib and app
   #   runs-on: ubuntu-latest
