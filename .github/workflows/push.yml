@@ -30,7 +30,7 @@ jobs:
   #     run: |
   #       yarn install
   #       npm run test:core:lib:ci
-  testingE2e:
+  testingE2E:
     name: Testing app with e2e
     runs-on: ubuntu-16.04
     steps:
