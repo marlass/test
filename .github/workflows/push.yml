@@ -39,7 +39,7 @@ jobs:
       run: |
         yarn
         yarn install
-        yarn e2e:cy:run
+        cd projects/storefrontapp-e2e-cypress && npm i && npm run cy:run"
   # buildingProjects:
   #   name: Building core lib and app
   #   runs-on: ubuntu-latest
