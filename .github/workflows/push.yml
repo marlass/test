@@ -41,7 +41,7 @@ jobs:
           yarn build:core:lib
           yarn build
           yarn add serve --no-save
-          yarn add pm2 --no-save
+          yarn global add pm2 --no-save
           pm2 start npm -- start:app
           cd projects/storefrontapp-e2e-cypress && yarn && cd ../..
           yarn e2e:cy:run:smoke
